@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Control texto Avanzado</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="paises_array">
+        <item>España</item>
+        <item>Francia</item>
+        <item>Alemania</item>
+        <item>Holanda</item>
+        <item>Italia</item>
+        <item>Portugal</item>
+        <item>Inglaterra</item>
+        <item>Mexico</item>
+    </string-array>
+
+</resources>
