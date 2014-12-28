@@ -16,16 +16,20 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AutoCompleteTextView auto = (AutoCompleteTextView) findViewById(R.id.auto_CTV);
+        AutoCompleteTextView auto = (AutoCompleteTextView) findViewById(R.id.auto_CTV);                 //Declaracion de los elementos
         MultiAutoCompleteTextView multi = (MultiAutoCompleteTextView) findViewById(R.id.multi_CTV);
 
-        String[] paises = getResources().getStringArray(R.array.paises_array);
+        String[] paises = getResources().getStringArray(R.array.paises_array);                          //Creacion de nuestro Array
 
         ArrayAdapter<String>adapter;
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,paises);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1,paises);// Utilizacion de un adaptador que nos proporciona el sistema aunque tb lo podemos crear nosotros
 
-        auto.setThreshold(1);
+        auto.setThreshold(1);                                                                           // Le decimos cuantas letras utilizamos para las sujerencias
         multi.setThreshold(1);
+        multi.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());                             // Le decimos con que vamos a separar las palabras, en este caso comas
+
+        auto.setAdapter(adapter);                                                                       // Asignamos el adaptador
+        multi.setAdapter(adapter);
 
     }
 
