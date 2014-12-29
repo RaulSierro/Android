@@ -5,4 +5,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="colores">
+        <item>Rojo</item>
+        <item>Amarillo</item>
+        <item>Azul</item>
+        <item>Verde</item>
+        <item>Naranja</item>
+    </string-array>
+
 </resources>
