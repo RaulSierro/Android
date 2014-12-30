@@ -1,0 +1,5 @@
+package com.raul.basesqlite;
+
+public class DataBaseManage {
+
+}
