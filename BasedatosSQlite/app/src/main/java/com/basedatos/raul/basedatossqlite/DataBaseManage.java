@@ -1,5 +1,8 @@
 package com.basedatos.raul.basedatossqlite;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 /**
  * Created by Raul on 29/12/2014.
  */
@@ -15,4 +18,12 @@ public class DataBaseManage {
             + CN_NAME + " text not null,"
             + CN_PHONE + " text);";
 
+    private DbHelper helper;
+    private SQLiteDatabase db;
+
+    public DataBaseManage(Context context) {
+
+        helper = new DbHelper(context);
+        db = helper.getWritableDatabase();
+    }
 }

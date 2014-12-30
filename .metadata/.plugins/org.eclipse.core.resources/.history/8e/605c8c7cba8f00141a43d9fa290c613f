@@ -13,7 +13,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		DataBaseManage manager = new DataBaseManage(this);
+		DbHelper helper = new DbHelper(this);
+        SQLiteDatabase db = helper.getWritableDatabase();
 	}
 
 	@Override

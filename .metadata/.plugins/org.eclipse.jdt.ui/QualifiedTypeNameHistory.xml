@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.database.sqlite.SQLiteOpenHelper"/>
+<fullyQualifiedTypeName name="android.database.sqlite.SQLiteDatabase"/>
+<fullyQualifiedTypeName name="com.raul.basesqlite.DbHelper"/>
+<fullyQualifiedTypeName name="com.raul.basesqlite.DataBaseManage"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+</qualifiedTypeNameHistroy>
