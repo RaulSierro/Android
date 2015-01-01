@@ -17,6 +17,9 @@ public class MainActivity extends Activity {
 
         DataBaseManage manage = new DataBaseManage(this);
 
+        manage.insertar("Raul","609839453");
+        manage.insertar("Silvia","649070049");
+
     }
 
 

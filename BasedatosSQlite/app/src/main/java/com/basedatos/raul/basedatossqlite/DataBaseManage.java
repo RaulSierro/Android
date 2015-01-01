@@ -42,4 +42,11 @@ public class DataBaseManage {
         db.insert(TABLE_NAME, null,generarContentValues(nombre,telefono));
     }
 
+    /*public void insertar2(String nombre, String telefono){
+
+        db.execSQL();
+    }*/
+
+
+
 }
