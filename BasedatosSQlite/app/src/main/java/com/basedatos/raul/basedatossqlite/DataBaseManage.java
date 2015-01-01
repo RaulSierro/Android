@@ -1,5 +1,6 @@
 package com.basedatos.raul.basedatossqlite;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -26,4 +27,19 @@ public class DataBaseManage {
         helper = new DbHelper(context);
         db = helper.getWritableDatabase();
     }
+
+    public ContentValues generarContentValues(String nombre, String telefono){
+        ContentValues valores = new ContentValues();
+        valores.put(CN_NAME, nombre);
+        valores.put(CN_PHONE,telefono);
+
+        return valores;
+    }
+
+    public void insertar(String nombre, String telefono){
+
+
+        db.insert(TABLE_NAME, null,generarContentValues(nombre,telefono));
+    }
+
 }
