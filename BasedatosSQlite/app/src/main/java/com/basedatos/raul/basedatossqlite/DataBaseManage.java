@@ -2,6 +2,7 @@ package com.basedatos.raul.basedatossqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -46,6 +47,27 @@ public class DataBaseManage {
 
         db.execSQL();
     }*/
+
+    public void eliminar(String nombre){
+        db.delete(TABLE_NAME,CN_NAME+"=?",new String[]{nombre});
+    }
+
+    public  void eliminarMultiple(String nom1,String nom2){
+        db.delete(TABLE_NAME,CN_NAME+"IN (?,?)",new String[]{nom1,nom2});
+    }
+
+    public void modificarTelefono(String nombre,String nuevoTelefono){
+
+        db.update(TABLE_NAME,generarContentValues(nombre,nuevoTelefono),CN_NAME+"=?",new String[]{nombre});
+    }
+
+    public Cursor CargarCursorContactos(){
+
+        String[] columnas = new String[]{CN_ID,CN_NAME,CN_PHONE};
+        return db.query(TABLE_NAME, columnas, null,null, null, null, null);
+
+
+    }
 
 
 

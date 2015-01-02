@@ -5,4 +5,7 @@
 <fullyQualifiedTypeName name="com.raul.basesqlite.DbHelper"/>
 <fullyQualifiedTypeName name="com.raul.basesqlite.DataBaseManage"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.content.ContentValues"/>
+<fullyQualifiedTypeName name="android.database.Cursor"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
 </qualifiedTypeNameHistroy>

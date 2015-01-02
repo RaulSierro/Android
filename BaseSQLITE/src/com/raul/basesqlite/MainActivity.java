@@ -13,7 +13,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		DataBaseManage manager = new DataBaseManage(this);
+		 DataBaseManage manage = new DataBaseManage(this);
+
+	     /*manage.insertar("Raul","609839453");
+	     manage.insertar("Silvia","649070049");
+	     manage.insertar("Kuerpo","625742154");
+	     manage.eliminar("Kuerpo");*/
 	}
 
 	@Override
