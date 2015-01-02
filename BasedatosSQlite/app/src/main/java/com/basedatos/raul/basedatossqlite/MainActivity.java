@@ -29,6 +29,8 @@ public class MainActivity extends Activity {
         manage.insertar("Raul","609839453");
         manage.insertar("Silvia","649070049");
         manage.insertar("Kuerpo","625742154");
+        //manage.eliminar("Kuerpo");
+        manage.modificarTelefono("Silvia", "091");
 
         String[] from = new String[]{manage.CN_NAME,manage.CN_PHONE};
         int[] to = new int[]{android.R.id.text1,android.R.id.text2};
