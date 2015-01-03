@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import static java.lang.Thread.*;
+
 /**
  * Created by Raul on 29/12/2014.
  */
@@ -63,10 +65,26 @@ public class DataBaseManage {
 
     public Cursor CargarCursorContactos(){
 
+
         String[] columnas = new String[]{CN_ID,CN_NAME,CN_PHONE};
-        return db.query(TABLE_NAME, columnas, null,null, null, null, null);
+
+        try {
+            Thread.sleep(7000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return db.query(TABLE_NAME,columnas,null,null,null,null,null);
 
 
+
+
+    }
+
+    public Cursor buscarContactos(String nombre) {
+
+        String[] columnas = new String[]{CN_ID,CN_NAME,CN_PHONE};
+        return db.query(TABLE_NAME,columnas,CN_NAME + "=?",new String[]{nombre},null,null,null);
     }
 
 
