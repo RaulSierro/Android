@@ -3,6 +3,7 @@ package com.basedatos.raul.basedatossqlite;
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -52,10 +54,31 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         if (view.getId() == R.id.imageButton) {
 
-            Cursor c = manage.buscarContactos(tv.getText().toString());
-            adapter.changeCursor(c);
+            new BuscarTask().execute();
+
         }
 
+    }
+
+
+    private class BuscarTask extends AsyncTask<Void,Void,Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            cursor = manage.buscarContactos(tv.getText().toString());
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            Toast.makeText(getApplicationContext(),"Buscando.....",Toast.LENGTH_LONG).show();
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            adapter.changeCursor(cursor);
+            Toast.makeText(getApplicationContext(),"Busqueda Finalizada.....",Toast.LENGTH_LONG).show();
+        }
     }
 
 

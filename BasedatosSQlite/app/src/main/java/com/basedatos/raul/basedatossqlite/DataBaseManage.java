@@ -69,7 +69,7 @@ public class DataBaseManage {
         String[] columnas = new String[]{CN_ID,CN_NAME,CN_PHONE};
 
         try {
-            Thread.sleep(7000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
