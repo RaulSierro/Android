@@ -1,32 +1,25 @@
-package com.controlespersonalizadosb.raulsierro.controlpersonalizadoii;
+package com.pestanas.raulsierro.pestanas;
 
+import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TabHost;
 
 
 public class MainActivity extends ActionBarActivity {
-
-    private ControlLogin ctlLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ctlLogin = (ControlLogin) findViewById(R.id.CtlLogin);
+        Resources res = getResources();
+        TabHost tabs = (TabHost)findViewById(android.R.id.tabhost);
+        tabs.setup();
 
-        ctlLogin.setOnLoginListener(new OnLoginListener() {
-            @Override
-            public void onLogin(String usuario, String password) {
-                if (usuario.equals("Raul") && password.equals("Sierro")) {
-                    ctlLogin.setMensaje("Login Correcto¡¡¡");
-                }else {
-                    ctlLogin.setMensaje("ERROR: Usuario o contrasena no coinciden");
-                }
-            }
-        });
+        TabHost.TabSpec spec = tabs.newTabSpec("mi tab1");
 
     }
 

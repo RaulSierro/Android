@@ -14,11 +14,11 @@ public class ExtendedEditText extends EditText{
 
     private Paint p1;
     private Paint p2;
-    private float escala;
-    private int anInt;
+    //private float escala;
+    //private int anInt;
 
-    public ExtendedEditText(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    public ExtendedEditText(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
         Inicializacion();
     }
 
@@ -33,10 +33,7 @@ public class ExtendedEditText extends EditText{
         Inicializacion();
     }
 
-    public ExtendedEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        Inicializacion();
-    }
+
 
     private  void Inicializacion() {
         Paint p1 = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -47,7 +44,7 @@ public class ExtendedEditText extends EditText{
         p2.setColor(Color.WHITE);
         p2.setTextSize(20);
 
-        escala = getResources().getDisplayMetrics().density;
+        //escala = getResources().getDisplayMetrics().density;
     }
 
     @Override
@@ -58,10 +55,10 @@ public class ExtendedEditText extends EditText{
         super.onDraw(canvas);
 
         // Dibujamos fondo nergro del contador
-        canvas.drawRect(this.getWidth()-30*escala, 5*escala,this.getWidth()-5*escala,20*escala, p1);
+        canvas.drawRect(this.getWidth()-30, 5,this.getWidth()-5,20, p1);
 
         // Dibujamos el numero de caracteres en el contador
-        canvas.drawText("" + this.getText().toString().length(), this.getWidth()-28*escala, 17*escala, p2);
+        canvas.drawText("" + this.getText().toString().length(), this.getWidth()-28, 17, p2);
 
 
     }
