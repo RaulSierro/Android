@@ -1,35 +1,27 @@
-package com.pestanas.raulsierro.pestanas;
+package com.fragment.raulsierro.fragment;
 
-import android.content.res.Resources;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TabHost;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends FragmentActivity implements FragmentListado.CorreosListener {
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Resources res = getResources();
-        TabHost tabs = (TabHost)findViewById(android.R.id.tabhost);
-        tabs.setup();
+        FragmentListado frgListado=(FragmentListado)getSupportFragmentManager().findFragmentById(R.id.FrgListado);
 
-        TabHost.TabSpec spec = tabs.newTabSpec("Mi Tab1");
-        spec.setContent(R.id.tab1);
-        spec.setIndicator("", res.getDrawable(android.R.drawable.ic_btn_speak_now));
-        tabs.addTab(spec);
+        frgListado.setCorreosListener(this);
 
-        spec = tabs.newTabSpec("Mi Tab2");
-        spec.setContent(R.id.tab2);
-        spec.setIndicator("TAB2", res.getDrawable(android.R.drawable.ic_dialog_map));
-        tabs.addTab(spec);
-
-        tabs.setCurrentTab(0);
 
     }
 
@@ -54,5 +46,23 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCorreoSeleccionado(Correo c) {
+
+        boolean hayDetalle =
+                (getSupportFragmentManager().findFragmentById(R.id.FrgDetalle) != null);
+
+        if(hayDetalle) {
+            ((FragmenDetalle)getSupportFragmentManager()
+                    .findFragmentById(R.id.FrgDetalle)).mostrarDetalle(c.getTexto());
+        }
+        else {
+            Intent i = new Intent(this, DetalleActivity.class);
+            i.putExtra(DetalleActivity.EXTRA_TEXTO, c.getTexto());
+            startActivity(i);
+        }
+
     }
 }

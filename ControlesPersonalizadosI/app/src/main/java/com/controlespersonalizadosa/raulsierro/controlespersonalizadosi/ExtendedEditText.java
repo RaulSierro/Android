@@ -1,11 +1,12 @@
 package com.controlespersonalizadosa.raulsierro.controlespersonalizadosi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.util.AttributeSet;
-import android.widget.EditText;
+        import android.content.Context;
+        import android.graphics.Canvas;
+        import android.graphics.Color;
+        import android.graphics.Paint;
+        import android.graphics.Paint.Style;
+        import android.util.AttributeSet;
+        import android.widget.EditText;
 
 /**
  * Created by raulsierro on 7/1/15.
@@ -42,7 +43,7 @@ public class ExtendedEditText extends EditText{
 
         Paint p2 = new Paint(Paint.ANTI_ALIAS_FLAG);
         p2.setColor(Color.WHITE);
-        p2.setTextSize(20);
+        //p2.setTextSize(20);
 
         //escala = getResources().getDisplayMetrics().density;
     }
