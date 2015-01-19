@@ -1,0 +1,5 @@
+<root>
+    <item name='android.support.v7.app.ActionBar NAVIGATION_MODE_TABS'>
+        <annotation name='org.jetbrains.annotations.NotNull' />
+    </item>
+</root>

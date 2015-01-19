@@ -1,17 +1,24 @@
 package com.actionbar2.raulsierro.actionbar2;
 
+import android.app.Activity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import static android.support.v7.app.ActionBar.NAVIGATION_MODE_TABS;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        android.app.ActionBar abar = getActionBar();
+        abar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
     }
 
 
